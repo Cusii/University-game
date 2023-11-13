@@ -33,7 +33,7 @@ def dibujar(screen, productos_en_pantalla, producto_principal, producto_candidat
 
     pos = 0
     for producto in productos_en_pantalla:
-        nombre_en_pantalla = str(pos) + " - "+producto[0]+producto[1] #+str(producto[2])## eliminar ultimo valor
+        nombre_en_pantalla = str(pos) + " - "+producto[0]+producto[1] +str(producto[2])## eliminar ultimo valor
         if producto[0] == producto_principal[0] and producto[1]== producto_principal[1]:
             screen.blit(defaultFontGrande.render(nombre_en_pantalla,
                         1, COLOR_TIEMPO_FINAL), (x_pos, y_pos))
