@@ -1,0 +1,15 @@
+Arroz,1001,1037
+Yerba mate,4546,4904
+Televisor Smart,2055,2439
+Aceite de cocina,3674,4783
+Mouse,1635,3603
+Monitor de computadora,2782,2870
+Silla de oficina,3174,4391
+Lavadora,3720,4197
+Refrigerador,3352,4533
+Smartphone,2070,2224
+Laptop,4650,4854
+Cafetera,2358,3646
+Batidora,1833,4401
+Microondas,4254,4624
+Tostadora,2802,4655

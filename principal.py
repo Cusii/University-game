@@ -45,6 +45,9 @@ def main():
     # dibuja la pantalla la primera vez
     dibujar(screen, productos_en_pantalla, producto,
             producto_candidato, puntos, segundos)
+    
+    aux=0
+    sonidos("fondo")
 
     while segundos > fps/1000:
         # 1 frame cada 1/fps segundos
@@ -55,10 +58,16 @@ def main():
             fps = 3
 
         # Buscar la tecla apretada del modulo de eventos de pygame
+
+        if (aux!=puntos):
+            aux=puntos
+            sonidos("coin")
+
         for e in pygame.event.get():
 
             # QUIT es apretar la X en la ventana
             if e.type == QUIT:
+                crear_lista_puntos(str(puntos)+"\n")
                 pygame.quit()
                 return ()
 
@@ -98,6 +107,7 @@ def main():
         # Esperar el QUIT del usuario
         for e in pygame.event.get():
             if e.type == QUIT:
+                crear_lista_puntos(int(puntos))
                 pygame.quit()
                 return
 

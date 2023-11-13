@@ -3,13 +3,29 @@ import pygame
 from pygame.locals import *
 from configuracion import *
 
+def crear_lista_puntos(puntos):
+    lista=open("puntos.txt","a")
+    lista.write(puntos)
+
+    lista=open("puntos.txt","r")
+    if len(lista)==10:
+        lista.pop()
+
+def sonidos(sonido):
+
+    if sonido=="coin":
+        coin=pygame.mixer.Sound('sonidos/mario-coin.mp3')
+        return coin.play()
+    if sonido=="fondo":
+        pygame.mixer.music.load('sonidos/game-background-music-169723.mp3')
+        return pygame.mixer.music.play(3)
+    
 
 def dameLetraApretada(key):
     if K_0 <= key and key <= K_9:
         return str(key - K_0)
     else:
         return ""
-
 
 def dibujar(screen, productos_en_pantalla, producto_principal, producto_candidato, puntos, segundos):
 
@@ -33,7 +49,8 @@ def dibujar(screen, productos_en_pantalla, producto_principal, producto_candidat
 
     pos = 0
     for producto in productos_en_pantalla:
-        nombre_en_pantalla = str(pos) + " - "+producto[0]+producto[1] +str(producto[2])## eliminar ultimo valor
+        nombre_en_pantalla = str(pos) + " - "+producto[0]+producto[1] # + str(producto[2])## eliminar ultimo valor
+        #resaltar productos similares
         if producto[0] == producto_principal[0] and producto[1]== producto_principal[1]:
             screen.blit(defaultFontGrande.render(nombre_en_pantalla,
                         1, COLOR_TIEMPO_FINAL), (x_pos, y_pos))
